@@ -269,7 +269,7 @@
     .foot-links a { font-size: 11px; color: var(--t3); text-decoration: none; transition: color 0.15s; }
     .foot-links a:hover { color: var(--t2); }
 
-    .foot-bar { height: 3px; background: linear-gradient(90deg, #e8903a, #00c4a0, #5b8dee); }
+    .foot-bar { height: 3px; background: linear-gradient(90deg, #e8903a, #00c4a0, #5b8dee); transform: translateZ(0); }
 
     .foot-copy { font-size: 11px; color: var(--t3); text-align: center; padding: 10px 0; }
 
@@ -286,6 +286,9 @@
       .glow { display: none; }
       /* Disable animations on mobile — not worth the jank */
       .fade { opacity: 1; animation: none; }
+      /* Disable hover transitions on touch — causes jank */
+      .product { transition: none; }
+      .c-cta { transition: none; }
       /* Smooth scrolling */
       html { -webkit-overflow-scrolling: touch; }
     }
