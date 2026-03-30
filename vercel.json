@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/action",
+      "destination": "https://refs.recomlinked.com/action",
+      "permanent": false
+    },
+    {
+      "source": "/action/:path*",
+      "destination": "https://refs.recomlinked.com/action/:path*",
+      "permanent": false
+    }
+  ]
+}
