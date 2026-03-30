@@ -244,10 +244,9 @@
       font-size: 13px;
       color: var(--t3);
       opacity: 0;
-      transform: translateX(-4px);
-      transition: opacity 0.15s, transform 0.15s;
       flex-shrink: 0;
     }
+    .product:hover .p-arrow { opacity: 1; }
 
     .product-dim { opacity: 0.4; }
     .product-dim:hover { opacity: 0.65; }
@@ -261,36 +260,36 @@
     .foot-logo { display: flex; align-items: center; opacity: 0.7; }
     .fl-r { background: var(--gold); color: #07090f; font-weight: 800; font-size: 11px; padding: 1px 5px; border-radius: 2px 0 0 2px; }
     .fl-l { background: rgba(255,255,255,0.06); color: var(--t1); font-weight: 800; font-size: 11px; padding: 1px 5px; border-radius: 0 2px 2px 0; }
-    .foot-li { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--t3); text-decoration: none; transition: color 0.15s; }
-    .foot-li:hover { color: var(--t2); }
+    .foot-li { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--t3); text-decoration: none; }
     .foot-li svg { opacity: 0.5; }
 
     .foot-links { display: flex; align-items: center; gap: 20px; }
-    .foot-links a { font-size: 11px; color: var(--t3); text-decoration: none; transition: color 0.15s; }
-    .foot-links a:hover { color: var(--t2); }
+    .foot-links a { font-size: 11px; color: var(--t3); text-decoration: none; }
 
-    .foot-bar { height: 3px; background: linear-gradient(90deg, #e8903a, #00c4a0, #5b8dee); transform: translateZ(0); }
+    .foot-bar { height: 3px; background: linear-gradient(90deg, #e8903a, #00c4a0, #5b8dee); }
 
     .foot-copy { font-size: 11px; color: var(--t3); text-align: center; padding: 10px 0; }
 
-    /* ── Animations ── */
-    .fade { opacity: 0; animation: fu 0.45s ease forwards; }
-    @keyframes fu { to { opacity: 1; } }
-    .d1{animation-delay:.03s}.d2{animation-delay:.08s}.d3{animation-delay:.14s}
-    .d4{animation-delay:.2s}.d5{animation-delay:.26s}.d6{animation-delay:.32s}
-    .d7{animation-delay:.38s}.d8{animation-delay:.44s}
+    /* hover effects — desktop only */
+    @media(hover: hover){
+      .product { transition: background 0.15s; }
+      .product:hover { background: rgba(255,255,255,0.03); }
+      .p-arrow { transition: opacity 0.15s, transform 0.15s; transform: translateX(-4px); }
+      .product:hover .p-arrow { opacity: 1; transform: translateX(0); }
+      .foot-li { transition: color 0.15s; }
+      .foot-li:hover { color: var(--t2); }
+      .foot-links a { transition: color 0.15s; }
+      .foot-links a:hover { color: var(--t2); }
+      .product-dim:hover { opacity: 0.65; }
+    }
 
-    /* ── Mobile performance ── */
-    @media(max-width:640px){
-      /* Kill fixed glow elements on mobile — main cause of scroll lag */
-      .glow { display: none; }
-      /* Disable animations on mobile — not worth the jank */
-      .fade { opacity: 1; animation: none; }
-      /* Disable hover transitions on touch — causes jank */
-      .product { transition: none; }
-      .c-cta { transition: none; }
-      /* Smooth scrolling */
-      html { -webkit-overflow-scrolling: touch; }
+    /* ── Animations — desktop only ── */
+    @media(hover: hover){
+      .fade { opacity: 0; animation: fu 0.45s ease forwards; }
+      @keyframes fu { to { opacity: 1; } }
+      .d1{animation-delay:.03s}.d2{animation-delay:.08s}.d3{animation-delay:.14s}
+      .d4{animation-delay:.2s}.d5{animation-delay:.26s}.d6{animation-delay:.32s}
+      .d7{animation-delay:.38s}.d8{animation-delay:.44s}
     }
 
     /* ── Responsive ── */
@@ -300,6 +299,7 @@
       .hero { padding: 48px 20px 52px; }
       .products-wrap { padding: 28px 20px 48px; }
       .p-url { display: none; }
+      .p-arrow { display: none; }
       h1 { font-size: 30px; letter-spacing: -1.2px; }
       .hero-body { font-size: 14px; max-width: 100%; }
       .slabel { font-size: 10px; }
@@ -307,6 +307,8 @@
       .p-desc { font-size: 11px; }
       .foot-top { flex-direction: column; align-items: flex-start; gap: 10px; }
       .foot-links { flex-wrap: wrap; gap: 12px; }
+      /* Kill pulse animation on mobile */
+      .eyebrow-dot { animation: none; }
     }
   </style>
 </head>
