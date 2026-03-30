@@ -16,9 +16,6 @@
   <meta property="og:url" content="https://recomlinked.com/"/>
   <meta property="og:title" content="Recomlinked — From AI Uncertainty to Professional Clarity"/>
   <meta property="og:description" content="We help professionals and organizations understand how AI is reshaping roles, skills, and decisions through structured, data-driven insights."/>
-  <meta property="og:image" content="https://career.recomlinked.com/og-image.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
   <meta property="og:site_name" content="Recomlinked"/>
   <meta property="og:locale" content="en_US"/>
 
@@ -26,7 +23,6 @@
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Recomlinked — From AI Uncertainty to Professional Clarity"/>
   <meta name="twitter:description" content="We help professionals and organizations understand how AI is reshaping roles, skills, and decisions through structured, data-driven insights."/>
-  <meta name="twitter:image" content="https://career.recomlinked.com/og-image.png"/>
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -36,7 +32,6 @@
     "name": "Recomlinked",
     "legalName": "Recomlinked Technologies Inc.",
     "url": "https://recomlinked.com",
-    "logo": "https://career.recomlinked.com/favicon.svg",
     "description": "We help professionals and organizations understand how AI is reshaping roles, skills, and decisions through structured, data-driven insights.",
     "foundingDate": "2023",
     "address": {
@@ -284,6 +279,16 @@
     .d1{animation-delay:.03s}.d2{animation-delay:.08s}.d3{animation-delay:.14s}
     .d4{animation-delay:.2s}.d5{animation-delay:.26s}.d6{animation-delay:.32s}
     .d7{animation-delay:.38s}.d8{animation-delay:.44s}
+
+    /* ── Mobile performance ── */
+    @media(max-width:640px){
+      /* Kill fixed glow elements on mobile — main cause of scroll lag */
+      .glow { display: none; }
+      /* Disable animations on mobile — not worth the jank */
+      .fade { opacity: 1; animation: none; }
+      /* Smooth scrolling */
+      html { -webkit-overflow-scrolling: touch; }
+    }
 
     /* ── Responsive ── */
     @media(max-width:640px){
