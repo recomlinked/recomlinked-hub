@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recomlinked — From AI Uncertainty to Professional Clarity</title>
+  <meta name="description" content="We help professionals and organizations understand how AI is reshaping roles, skills, and decisions through structured, data-driven insights."/>
+  <meta property="og:title" content="Recomlinked"/>
+  <meta property="og:description" content="From AI Uncertainty to Professional Clarity"/>
+  <meta property="og:url" content="https://recomlinked.com"/>
+  <link rel="canonical" href="https://recomlinked.com/"/>
+  <link rel="icon" type="image/svg+xml" href="https://career.recomlinked.com/favicon.svg"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:    #07090f;
+      --bg2:   #0f1117;
+      --gold:  #c9a84c;
+      --teal:  #00c4a0;
+      --blue:  #5b8dee;
+      --orange:#e8903a;
+      --t1:    #e8eaf2;
+      --t2:    #8a90a8;
+      --t3:    #343848;
+      --border: rgba(255,255,255,0.06);
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--t1);
+      font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: relative; z-index: 10;
+      padding: 22px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo-r { background: var(--gold); color: #07090f; font-weight: 800; font-size: 14px; padding: 2px 7px; border-radius: 3px 0 0 3px; }
+    .logo-l { background: rgba(255,255,255,0.06); color: var(--t1); font-weight: 800; font-size: 14px; padding: 2px 7px; border-radius: 0 3px 3px 0; }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 88px 48px 80px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      opacity: 0.8;
+    }
+    .eyebrow-dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2.5s ease infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.4;transform:scale(0.8);} }
+    h1 {
+      font-size: clamp(36px, 5.5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      color: var(--t1);
+      margin-bottom: 20px;
+    }
+    .hero-line {
+      width: 80px; height: 3px;
+      background: linear-gradient(90deg, #e8903a, #00c4a0, #5b8dee);
+      border-radius: 2px;
+      margin: 0 auto 24px;
+    }
+    .hero-body {
+      font-size: 15px;
+      color: var(--t2);
+      line-height: 1.8;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .hero-body + .hero-body {
+      margin-top: 10px;
+      color: var(--t3);
+    }
+
+    /* ── Products ── */
+    .products-wrap {
+      flex: 1;
+      max-width: 860px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 48px 48px 72px;
+    }
+
+    /* Section label */
+    .slabel {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--t3);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .slabel::after {
+      content: '';
+      flex: 1; height: 1px;
+      background: var(--border);
+    }
+
+    .products { display: flex; flex-direction: column; gap: 2px; margin-bottom: 40px; }
+
+    .product {
+      display: flex;
+      align-items: center;
+      padding: 18px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      gap: 18px;
+      transition: background 0.15s;
+    }
+    .product:hover { background: rgba(255,255,255,0.03); }
+    .product:hover .p-arrow { opacity: 1; transform: translateX(0); }
+
+    .p-accent {
+      width: 2px;
+      border-radius: 2px;
+      align-self: stretch;
+      flex-shrink: 0;
+      min-height: 32px;
+    }
+
+    .p-body { flex: 1; }
+
+    .p-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--t1);
+      letter-spacing: -0.2px;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .p-tag {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tag-new  { color: var(--teal); background: rgba(0,196,160,0.08); border: 1px solid rgba(0,196,160,0.16); }
+
+    .p-desc { font-size: 12px; color: var(--t2); line-height: 1.5; }
+
+    .p-url { font-size: 11px; color: var(--t3); flex-shrink: 0; }
+
+    .p-arrow {
+      font-size: 13px;
+      color: var(--t3);
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: opacity 0.15s, transform 0.15s;
+      flex-shrink: 0;
+    }
+
+    .product-dim { opacity: 0.4; }
+    .product-dim:hover { opacity: 0.65; }
+
+    /* ── Footer ── */
+    footer { border-top: 1px solid var(--border); padding: 20px 48px 0; }
+
+    .foot-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+
+    .foot-left { display: flex; flex-direction: column; gap: 6px; }
+    .foot-logo { display: flex; align-items: center; opacity: 0.7; }
+    .fl-r { background: var(--gold); color: #07090f; font-weight: 800; font-size: 11px; padding: 1px 5px; border-radius: 2px 0 0 2px; }
+    .fl-l { background: rgba(255,255,255,0.06); color: var(--t1); font-weight: 800; font-size: 11px; padding: 1px 5px; border-radius: 0 2px 2px 0; }
+    .foot-li { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--t3); text-decoration: none; transition: color 0.15s; }
+    .foot-li:hover { color: var(--t2); }
+    .foot-li svg { opacity: 0.5; }
+
+    .foot-links { display: flex; align-items: center; gap: 20px; }
+    .foot-links a { font-size: 11px; color: var(--t3); text-decoration: none; transition: color 0.15s; }
+    .foot-links a:hover { color: var(--t2); }
+
+    .foot-bar { height: 3px; background: linear-gradient(90deg, #e8903a, #00c4a0, #5b8dee); }
+
+    .foot-copy { font-size: 11px; color: var(--t3); text-align: center; padding: 10px 0; }
+
+    /* ── Animations ── */
+    .fade { opacity: 0; animation: fu 0.45s ease forwards; }
+    @keyframes fu { to { opacity: 1; } }
+    .d1{animation-delay:.03s}.d2{animation-delay:.08s}.d3{animation-delay:.14s}
+    .d4{animation-delay:.2s}.d5{animation-delay:.26s}.d6{animation-delay:.32s}
+    .d7{animation-delay:.38s}.d8{animation-delay:.44s}
+
+    /* ── Responsive ── */
+    @media(max-width:640px){
+      nav,footer{padding:16px 20px;}
+      .hero{padding:56px 20px 64px;}
+      .products-wrap{padding:36px 20px 56px;}
+      .p-url{display:none;}
+      h1{font-size:34px;letter-spacing:-1.5px;}
+      .hero-body{font-size:14px;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><span class="logo-r">Recom</span><span class="logo-l">linked</span></div>
+</nav>
+
+<section class="hero fade d1">
+  <div class="hero-inner">
+    <div class="eyebrow"><div class="eyebrow-dot"></div>Recomlinked Technologies</div>
+    <h1>From AI Uncertainty<br>to Professional Clarity</h1>
+    <div class="hero-line"></div>
+    <p class="hero-body">We help professionals and organizations understand how AI is reshaping roles, skills, and decisions through structured, data-driven insights.</p>
+    <p class="hero-body">From career intelligence tools to organizational AI exposure analysis, we turn uncertainty into clarity.</p>
+  </div>
+</section>
+
+<div class="products-wrap">
+
+  <div class="slabel fade d2">For professionals</div>
+  <div class="products">
+
+    <a class="product fade d3" href="https://career.recomlinked.com" target="_blank">
+      <div class="p-accent" style="background:var(--gold);"></div>
+      <div class="p-body">
+        <div class="p-name">AI Career Engine <span class="p-tag tag-new">New</span></div>
+        <div class="p-desc">Personalised AI exposure score based on actual tasks, not job titles.</div>
+      </div>
+      <div class="p-url">career.recomlinked.com</div>
+      <div class="p-arrow">→</div>
+    </a>
+
+    <a class="product fade d4" href="https://risk.recomlinked.com" target="_blank">
+      <div class="p-accent" style="background:var(--teal);"></div>
+      <div class="p-body">
+        <div class="p-name">Task-Level AI Exposure Index</div>
+        <div class="p-desc">AI automation risk scores for hundreds of job titles.</div>
+      </div>
+      <div class="p-url">risk.recomlinked.com</div>
+      <div class="p-arrow">→</div>
+    </a>
+
+    <a class="product product-dim fade d5" href="https://refs.recomlinked.com" target="_blank">
+      <div class="p-accent" style="background:var(--t3);"></div>
+      <div class="p-body">
+        <div class="p-name">Verified Professional References</div>
+        <div class="p-desc">Structured, verified recommendations from your network.</div>
+      </div>
+      <div class="p-url">refs.recomlinked.com</div>
+      <div class="p-arrow">→</div>
+    </a>
+
+  </div>
+
+  <div class="slabel fade d6">For organizations</div>
+  <div class="products">
+
+    <a class="product fade d7" href="https://ai.recomlinked.com" target="_blank">
+      <div class="p-accent" style="background:var(--blue);"></div>
+      <div class="p-body">
+        <div class="p-name">Organisational AI Exposure Estimator <span class="p-tag tag-new">New</span></div>
+        <div class="p-desc">Benchmark your organisation's AI automation potential and competitive position.</div>
+      </div>
+      <div class="p-url">ai.recomlinked.com</div>
+      <div class="p-arrow">→</div>
+    </a>
+
+  </div>
+
+</div>
+
+<footer>
+  <div class="foot-top">
+    <div class="foot-left">
+      <div class="foot-logo"><span class="fl-r">Recom</span><span class="fl-l">linked</span></div>
+      <a class="foot-li" href="https://www.linkedin.com/company/recomlinked/" target="_blank">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452H17.21V14.88c0-1.328-.024-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.67H9.985V9h3.102v1.561h.043c.432-.818 1.487-1.681 3.062-1.681 3.275 0 3.879 2.156 3.879 4.961v6.611zM5.337 7.433a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zM6.959 20.452H3.712V9h3.247v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+        4,000+ followers · Follow us
+      </a>
+    </div>
+    <div class="foot-links">
+      <a href="https://risk.recomlinked.com/about/" target="_blank">About</a>
+      <a href="https://risk.recomlinked.com/contact/" target="_blank">Contact</a>
+      <a href="https://risk.recomlinked.com/privacy-policy/" target="_blank">Privacy</a>
+    </div>
+  </div>
+  <div class="foot-bar"></div>
+  <div class="foot-copy">© 2026 Recomlinked Technologies Inc.</div>
+</footer>
+
+</body>
+</html>
