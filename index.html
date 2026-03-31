@@ -95,6 +95,7 @@
       color: var(--t1);
       font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
       overflow-x: hidden;
+      overscroll-behavior: none;
     }
 
     .products-wrap {
@@ -106,7 +107,7 @@
 
     footer {
       border-top: 1px solid var(--border);
-      padding: 20px 48px 0;
+      padding: 28px 48px 36px;
     }
 
     /* ── Nav ── */
@@ -267,7 +268,7 @@
 
     .foot-bar { height: 3px; background: linear-gradient(90deg, #e8903a, #00c4a0, #5b8dee); }
 
-    .foot-copy { font-size: 11px; color: var(--t3); text-align: center; padding: 10px 0; }
+    .foot-copy { font-size: 11px; color: var(--t3); text-align: center; padding: 12px 0 0; }
 
     /* hover effects — desktop only */
     @media(hover: hover){
@@ -294,7 +295,7 @@
     /* ── Responsive ── */
     @media(max-width:640px){
       nav { padding: 16px 20px; }
-      footer { padding: 16px 20px 0; }
+      footer { padding: 20px 20px 48px; }
       .hero { padding: 48px 20px 52px; }
       .products-wrap { padding: 28px 20px 48px; }
       .p-url { display: none; }
@@ -306,8 +307,11 @@
       .p-desc { font-size: 11px; }
       .foot-top { flex-direction: column; align-items: flex-start; gap: 10px; }
       .foot-links { flex-wrap: wrap; gap: 12px; }
-      /* Kill pulse animation on mobile */
+      /* Kill all animations and transitions on mobile */
       .eyebrow-dot { animation: none; }
+      .product { transition: none !important; }
+      .p-arrow { transition: none !important; }
+      .fade { opacity: 1 !important; animation: none !important; }
     }
   </style>
 </head>
